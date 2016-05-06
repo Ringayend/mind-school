@@ -13,8 +13,65 @@
 	padding-top: 2%;
 }
 
-#schema
+.button-signup
 {
-
+ padding-top: 10%;
+ padding-bottom: 10%;
 	
 }
+
+.central
+{
+ padding-top: 20%;
+ padding-bottom: 20%;
+  
+}
+
+#selector
+{
+width: 355px;
+ position: absolute;
+  top: 0px;
+   left: 0px;
+    opacity: 0.07845909572784501;
+     display: none;
+}
+
+
+
+.waves-effect.waves-bleu .waves-ripple{
+  background-color: #e1f5fe;
+}
+
+/* option color */
+   .input-field option {
+     color: #4fc3f7 !important;
+   }
+
+  /* label color */
+   .input-field label {
+     color: #4fc3f7 ;
+   }
+   /* label focus color */
+   .input-field input[type=text]:focus + label {
+     color: #4fc3f7 !important;
+   }
+   /* label underline focus color */
+   .input-field input[type=text]:focus {
+     border-bottom: 1px solid #4fc3f7 !important;
+     box-shadow: 0 1px 0 0 #4fc3f7 !important;
+   }
+   /* valid color */
+   .input-field input[type=text].valid {
+     border-bottom: 1px solid #4fc3f7 !important;
+     box-shadow: 0 1px 0 0 #4fc3f7 !important;
+   }
+   /* invalid color */
+   .input-field input[type=text].invalid {
+     border-bottom: 1px solid #4fc3f7 !important;
+     box-shadow: 0 1px 0 0 #4fc3f7 !important;
+   }
+   /* icon prefix focus color */
+   .input-field .prefix.active {
+     color: #4fc3f7 !important;
+   }

@@ -20,20 +20,47 @@
 			<div class="navbar-fixed">
 			  <nav>
 			    <div class="nav-wrapper white">
-			      <a href="#!" id="header-logo" class="brand-logo light-blue-text text-lighten-2">Mind School</a>
+			      <a href="index.html" id="header-logo" class="brand-logo light-blue-text text-lighten-2">Mind School</a>
 			      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons light-blue-text text-lighten-2">menu</i></a>
 			      <ul class="right hide-on-med-and-down">
-			        <li><a href="Login.html" class="light-blue-text text-lighten-2">Log in</a></li>
+			        <li><a href="#modalog" class="waves-effect waves-light modal-trigger light-blue-text text-lighten-2">Log in</a></li>
 			        <li><a href="Signup.html" class="light-blue-text text-lighten-2">Sign up</a></li>
 			      
 			      </ul>
 			      <ul class="side-nav" id="mobile-demo">
-			        <li><a href="Login.html" class="light-blue-text text-lighten-2">Log in</a></li>
+			        <li><a href="#modalog" class="light-blue-text text-lighten-2 modal-trigger modal-trigger">Log in</a></li>
 			        <li><a href="Signup.html" class="light-blue-text text-lighten-2">Sign up</a></li>
 			      </ul>
 			    </div>
 			  </nav>
 			 </div>
+
+				  <!-- Modal Structure -->
+				  <div id="modalog" class="modal bottom-sheet">
+				    	<div class="modal-content">
+					      <h4 class="grey-text">Log in</h4>
+						      <form class="col s12">
+							     <div class="row center">
+							        <div class="input-field col s6 offset-s3">
+							        	<i class="tiny material-icons prefix light-blue-text text-lighten-2">perm_identity</i>
+							          <input id="email" type="email" class="validate">
+							          <label for="email">Email</label>
+							        </div>    
+							      </div>
+							      <div class="row center">
+							        <div class="input-field col s6 offset-s3">
+							        	<i class="tiny material-icons prefix light-blue-text text-lighten-2">vpn_key</i>
+							          	<input id="password" type="password" class="validate">
+							          	<label for="password">Password</label>
+							        </div>
+							      </div>
+							    </form>
+							</div>
+						    <div class="modal-footer">
+						      <a href="#!" class=" modal-action modal-close waves-effect waves-light light-blue-text text-lighten-2 btn-flat">Connect</a>
+						    </div>
+				  </div>
+
 
 			   <div class="parallax-container">
 			    <div class="section no-pad-bot">
@@ -50,9 +77,11 @@
 			    	<img src="images/background1.jpg" alt="Unsplashed background img 1">
 			    </div>
 			  </div>
-			  <div>
+
+			  <div class="container">
 			  	
 			  	<h2 class="grey-text">Sing up <i class="medium material-icons prefix">mode_edit</i> </h2>
+			  	<p>Welcome, here you have the possibility to sign up to Mind School. </p>
 			</div>
 
 			<div class="container">
@@ -61,7 +90,7 @@
 			    <form class="col s12">
 			      <div class="row">
 			        <div class="input-field col s6">
-			        	<i class="tiny material-icons prefix">account_circle</i>
+			        	<i class="tiny material-icons prefix light-blue-text text-lighten-2">account_circle</i>
 			          	<input id="first_name" type="text" class="validate">
 			          	<label for="first_name">First Name</label>
 			        </div>
@@ -70,26 +99,90 @@
 			          <label for="last_name">Last Name</label>
 			        </div>
 			      </div>
+
 			      <div class="row">
-			        <div class="input-field col s12">
-			        	<i class="tiny material-icons prefix">mail</i>
+			        <div class="input-field col s6 offset-s3">
+			        	<i class="tiny material-icons prefix light-blue-text text-lighten-2">today</i> 
+			          	<input id="birthday" type="date" class="datepicker validate" placeholder="Bithday: 2016/05/16">
+			        </div>    
+			      </div>
+			      <div class="row">
+			     	 <div class="input-field col s6 offset-s3">
+					    <select>
+					      <option value="" disabled selected>Choose your category</option>
+					      <option value="1">School</option>
+					      <option value="2">Teacher</option>
+					      <option value="3">Student</option>
+					    </select>
+					    <label>Category</label>
+					  </div>
+					</div>
+			      <div class="row">
+			        <div class="input-field col s6 offset-s3">
+			        	<i class="tiny material-icons prefix light-blue-text text-lighten-2">mail</i>
 			          <input id="email" type="email" class="validate">
 			          <label for="email">Email</label>
 			        </div>    
 			      </div>
+			      <div class="row">
+			        <div class="input-field col s6 offset-s3">
+			        	<i class="tiny material-icons prefix light-blue-text text-lighten-2">call</i>
+			          <input id="phone" type="tel" class="validate">
+			          <label for="phone">Phone numbers</label>
+			        </div>    
+			      </div>
 			     <div class="row">
-			     	 
+			     	 <div class="input-field col s6 offset-s3">
+					    <select>
+					      <option value="" disabled selected>Choose your school</option>
+					      <option value="1">Polytech</option>
+					      <option value="2">UM 2</option>
+					      <option value="3">Others</option>
+					    </select>
+					    <label>School</label>
+					  </div>
+					</div>
+					<div class="row">
+			     	 <div class="input-field col s6 offset-s3">
+					    <select>
+					      <option value="" disabled selected>Choose your contient</option>
+					      <option value="1">Europe</option>
+					      <option value="2">North America</option>
+					      <option value="3">South America</option>
+					      <option value="4">Asia</option>
+					      <option value="5">Africa</option>
+					      <option value="6">Oceania</option>
+					    </select>
+					    <label>Continent</label>
+					  </div>
 					</div>
 			      <div class="row">
-			        <div class="input-field col s12">
+			        <div class="input-field col s6 offset-s3 ">
 			          	<input id="password" type="password" class="validate">
 			          	<label for="password">Password</label>
 			        </div>
 			      </div>
 			    </form>
-			    <button class="btn waves-effect waves-light light-blue lighten-2" type="submit" name="action">Submit
-    <i class="material-icons right">send</i>
-  </button>
+			    <div class="row center">
+
+					<!-- Modal Trigger -->
+					  <a class="btn waves-effect waves-blue light-blue lighten-2 modal-trigger" href="#modal1">Submit
+    					<i class="material-icons right">send</i>
+    					</a>
+
+					  <!-- Modal Structure -->
+					  <div id="modal1" class="modal">
+					    <div class="modal-content">
+					      <h4>Agrement</h4>
+					      <p>The informations in this previous form will be save and protect by Mind School.</p>
+					      <h5>Do you agree ?</h5>
+					    </div>
+					    <div class="modal-footer">
+					      <a href="#!" class=" modal-action modal-close waves-effect waves-blue light-blue-text text-lighten-2  btn-flat">Agree</a>
+					      <a href="#!" class=" modal-action modal-close waves-effect waves-blue light-blue-text text-lighten-2  btn-flat">Disagree</a>
+					    </div>
+					  </div>
+  				</div>
 			  </div>
 			 </div>
 
