@@ -1,7 +1,6 @@
 <!DOCTYPE HTML>
 <html>
 	<head>
-			
 			<?php require_once('contents/style.php'); ?>
 	</head>
 

@@ -100,24 +100,48 @@ LOGKEY varchar(255), CRYPTED_PASSWORD varchar(255) ,
 constraint loginKey primary key (logkey)
 );
 
-CREATE TRIGGER z_min_update 
-AFTER UPDATE ON activity
-FOR EACH ROW EXECUTE PROCEDURE suppress_redundant_updates_trigger();
 
 
-create or replace function results_values() RETURNS trigger AS $$
-begin
-  IF NEW.s_result_verl > 11 or NEW.s_result_lm > 11 or NEW.s_result_vs > 11 or NEW.s_result_mr > 11 or NEW.s_result_bk > 11 or NEW.s_result_intra > 11 or NEW.s_result_n > 11 or NEW.s_result_inter > 11 THEN
-    update student
-      SET s_result_verl=OLD.s_result_verl, s_result_lm = OLD.s_result_lm, s_result_vs = OLD.s_result_vs, s_result_mr = OLD.s_result_mr, s_result_bk = OLD.s_result_bk, s_result_intra = OLD.s_result_intra, s_result_n = OLD.s_result_n, s_result_inter = OLD.s_result_inter WHERE student_id=NEW.student_id;
-  END IF;
-  RETURN NEW;
+CREATE OR REPLACE FUNCTION check_value_result_verl()
+  RETURNS trigger AS
+$$
+BEGIN
+ IF NEW.s_result_verl > 10 THEN
+ INSERT INTO student (s_result_verl)
+ VALUES(OLD.s_result_verl);
+ END IF;
+ 
+ RETURN NEW;
 END;
 $$ LANGUAGE plpgsql;
 
-CREATE TRIGGER before_student_
-AFTER INSERT ON student
-FOR EACH ROW
-execute procedure results_values();
+CREATE TRIGGER before_student_result_verl
+  BEFORE UPDATE
+  ON student
+  FOR EACH ROW
+  EXECUTE PROCEDURE check_value_result_verl();
 
+  
+CREATE TRIGGER check_update
+    BEFORE UPDATE ON accounts
+    FOR EACH ROW
+    EXECUTE PROCEDURE check_account_update();
+    
+ CREATE OR REPLACE FUNCTION check_student_grade()
+  RETURNS trigger AS
+$$
+BEGIN
+ IF NEW.grade <> OLD.grade THEN
+ INSERT INTO supervise (student_id,teacher_id)
+ VALUES(NEW.student_id,NEW.teacher_id);
+ END IF;
+ 
+ RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;
+
+CREATE TRIGGER before_student_grade
+  BEFORE UPDATE ON supervise
+  FOR EACH ROW
+  EXECUTE PROCEDURE check_student_grade();
 

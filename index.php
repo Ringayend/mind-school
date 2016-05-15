@@ -1,32 +1,30 @@
 <?php
   require_once('connection.php');
- 
-if (isset($_POST['password']) and isset($_POST['login'])){
-  $password =$_POST['password'];
+require_once('models/check.php');
 
-  require_once('models/check.php');
-  $result = Check::login($_POST['login']);
+    if (isset($_POST['password']) and isset($_POST['login'])){
+    $password =$_POST['password'];
+    $result = Check::login($_POST['login']);
 
-  foreach ($result as $check) {
+    foreach ($result as $check) {
 
-  		$mail = $check->mail;
-	  	$passwords = $check->password;
-	  	$category= $check->category;
-	  	$key = sha1(date('G s'));
-	  	$cripted_password = sha1($password);
+       $mail = $check->mail;
+       $passwords = $check->password;
+       $category= $check->category;
+       $key = sha1(date('G s'));
+        $cripted_password = sha1($password);
+    
+      if($cripted_password == $passwords){
 
-	  
-	  if($cripted_password == $passwords){
-
-	  	setcookie('login', $mail, time() + (365*24*3600), "/", null, false, true);
-		setcookie('key', $key, time() + 900, "/", null, false, true);
-		setcookie('category', $category, time() + 900, "/", null, false, true);
-		$save = Check::save($key, $cripted_password);
-		$auth ="OK";
-	  }
-	}
-	
-}
+          setcookie('login', $mail, time() + (365*24*3600), "/", null, false, true);
+          setcookie('key', $key, time() + 900, "/", null, false, true);
+          setcookie('category', $category, time() + 900, "/", null, false, true);
+          $save = Check::save($key, $cripted_password);
+          $auth ="OK";
+          }
+        }
+  
+    }
 
 
 
@@ -36,8 +34,7 @@ if (isset($_POST['password']) and isset($_POST['login'])){
   if (count($params) == 2){ $params[1]= 'pages';  $params['2']= $temp;}
 
 
-
-if (isset($_COOKIE['login']) && isset($_COOKIE['key']) && isset($_COOKIE['category'])){
+if (isset($_COOKIE['login']) && $_COOKIE['key']!="empty" && $_COOKIE['category']!="empty"){
 	require_once('models/check.php');
   $result = Check::login($_COOKIE['login']);
   $verify = Check::verify($_COOKIE['key']);
@@ -56,6 +53,14 @@ elseif (isset($_COOKIE['login']) && !isset($_COOKIE['key'])) $auth="connect";
 
 else { $auth="None";}
 
+if ($params[2]=='logout'){
+	require_once('models/check.php');
+	$clean = Check::clean($_COOKIE['key']);
+      setcookie('key',"empty", time() - 900);
+      setcookie('category', "empty", time() - 900);
+      $auth="NONE";
+      } 
+
 if (isset($params[1]) && isset($params[2]) && $params[2]!='') {
 		    $controller = $params[1];
 		    $action     = $params[2];
@@ -63,6 +68,7 @@ if (isset($params[1]) && isset($params[2]) && $params[2]!='') {
 		    $controller = 'pages';
 		    $action     = 'home';
 		}
+
 
   
 

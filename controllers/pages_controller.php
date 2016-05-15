@@ -1,10 +1,14 @@
 <?php
   class PagesController {
 
-
     public function home() {
       require_once('views/pages/home.php');
     }
+
+    public function connect() {
+      require_once('views/pages/connect.php');
+    }
+
 
     public function error() {
       require_once('views/pages/error.php');
@@ -18,42 +22,14 @@
       require_once('views/pages/signup.php');
     }
 
-    public function login() {
-      if (isset($_POST['password']) and isset($_POST['login'])){
-    $password =$_POST['password'];
 
-    require_once('models/check.php');
-    $result = Check::login($_POST['login']);
-
-    foreach ($result as $check) {
-
-       $mail = $check->mail;
-       $passwords = $check->password;
-       $category= $check->category;
-       $key = sha1(date('G s'));
-        $cripted_password = sha1($password);
-
-    
-      if($cripted_password == $passwords){
-
-      setcookie('login', $mail, time() + (365*24*3600), "/", null, false, true);
-      setcookie('key', $key, time() + 900, "/", null, false, true);
-      setcookie('category', $category, time() + 900, "/", null, false, true);
-      $save = Check::save($key, $cripted_password);
-      $auth ="OK";
-      }
+  public function login(){
+    return call('pages','home');
   }
-  
-};
-    }
+
 
     public function logout() {
-
-      $clean = Check::clean($_COOKIE['key']);
-      $auth="NONE"; 
-      setcookie('key'," ", time() - 900);
-      setcookie('category', " ", time() - 900);
-      return call('pages','home');
+        require_once('views/pages/logout.php');
     }
 
     public function teacherDashboard($auth) {

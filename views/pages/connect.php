@@ -26,14 +26,14 @@
 
 			  <div class="container">
 			  	
-			  	<h2 class=" row center green-text"> <i class="medium material-icons prefix">done</i> Saved </h2>
+			  	<h2 class=" row center green-text"> <i class="medium material-icons prefix">done</i> connected </h2>
 			  	<p> </p>
 			</div>
 
 			<div class="container">
 			  <div class="row center">
 
-		<p><a href="/home">click here</a> to go back to the dashboard.</p>
+		<p><a href="/home">get started</a></p>
 
 		</div>
 		</div>

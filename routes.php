@@ -10,7 +10,7 @@
     // create a new instance of the needed controller
     switch($controller) {
       case 'pages':
-      require_once('models/check.php');
+      
         $controller = new PagesController();
       break;
 
@@ -53,7 +53,7 @@
 
   // just a list of the controllers we have and their actions
   // we consider those "allowed" values
-  $controllers = array('pages' => ['home', 'error','error404','signup','teacherDashboard','studentboard','presentation','students', 'schoolboard','teacherPresentation','studentPresentation','logout'],
+  $controllers = array('pages' => ['home', 'login', 'error','error404','signup','teacherDashboard','studentboard','presentation','students', 'schoolboard','teacherPresentation','studentPresentation','logout','connect'],
                         'activities' => ['index', 'show','edit', 'saved','create','delete','add'],
                           'students' => ['index','show','edit','delete'],
                           'members' => ['save'],

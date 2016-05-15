@@ -75,7 +75,7 @@
 				  <div id="modalog" class="modal bottom-sheet">
 				    	<div class="modal-content">
 					      <h4 class="grey-text">Log in</h4>
-						      <form class="col s12" action="/" method="post">
+						      <form class="col s12" action="/connect" method="post">
 							     <div class="row center">
 							        <div class="input-field col s6 offset-s3">
 							        	<i class="tiny material-icons prefix light-blue-text text-lighten-2">perm_identity</i>
@@ -91,7 +91,7 @@
 							        </div>
 							      </div>
 							      <div class="row right">
-							       <button class="waves-effect waves-light light-blue-text text-lighten-2 btn-flat" type="submit">Connect</button>
+							       <button class="waves-effect waves-light light-blue-text text-lighten-2 btn-flat" type="submit" onclick="/home">Connect</button>
 							    </div>
 							    </form>
 							</div>
