@@ -8,9 +8,15 @@
 	background-color: #4fc3f7;
 }
 
-#banner
+#banner 
 {
 	padding-top: 2%;
+}
+
+#banner1
+{
+  padding-top: 1%;
+  background-color: rgba(200,216,220,0.9);
 }
 
 .button-signup

@@ -1876,7 +1876,7 @@ $(document).ready(function(){
     }, false);
 
 })(window);
-;Materialize.toast = function (message, displayLength, className, completeCallback) {
+Materialize.toast = function (message, displayLength, className, completeCallback) {
     className = className || "";
 
     var container = document.getElementById('toast-container');

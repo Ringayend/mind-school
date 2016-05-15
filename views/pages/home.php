@@ -1,87 +1,31 @@
 <!DOCTYPE HTML>
 <html>
 	<head>
-			<meta charset="utf-8" />
-			<title> Mind School - The new way of education</title>
-			 <!--Import stylesheet.css-->
-		       <link type="text/css" rel="stylesheet" href="css/mainstylesheet.css"  media="screen,projection"/>
-
-			 <!--Import Google Icon Font-->
-		      <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-		      <!--Import materialize.css-->
-		      <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
-
-		      <!--Let browser know website is optimized for mobile-->
-		      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-		     
+			
+			<?php require_once('contents/style.php'); ?>
 	</head>
 
 	<body>
-			<div class="navbar-fixed">
-			  <nav>
-			    <div class="nav-wrapper white">
-			      <a href="index.html" id="header-logo" class="brand-logo light-blue-text text-lighten-2">Mind School</a>
-			      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons light-blue-text text-lighten-2">menu</i></a>
-			      <ul class="right hide-on-med-and-down">
-			        <li><a href="#modalog" class="waves-effect waves-light modal-trigger light-blue-text text-lighten-2">Log in</a></li>
-			        <li><a href="Signup.html" class="light-blue-text text-lighten-2">Sign up</a></li>
-			      
-			      </ul>
-			      <ul class="side-nav" id="mobile-demo">
-			        <li><a href="#modalog" class="light-blue-text text-lighten-2 modal-trigger modal-trigger">Log in</a></li>
-			        <li><a href="Signup.html" class="light-blue-text text-lighten-2">Sign up</a></li>
-			      </ul>
-			    </div>
-			  </nav>
-			 </div>
+			<?php require_once('navbar.php'); ?>
 
-				  <!-- Modal Structure -->
-				  <div id="modalog" class="modal bottom-sheet">
-				    	<div class="modal-content">
-					      <h4 class="grey-text">Log in</h4>
-						      <form class="col s12">
-							     <div class="row center">
-							        <div class="input-field col s6 offset-s3">
-							        	<i class="tiny material-icons prefix light-blue-text text-lighten-2">perm_identity</i>
-							          <input id="email" type="email" class="validate">
-							          <label for="email">Email</label>
-							        </div>    
-							      </div>
-							      <div class="row center">
-							        <div class="input-field col s6 offset-s3">
-							        	<i class="tiny material-icons prefix light-blue-text text-lighten-2">vpn_key</i>
-							          	<input id="password" type="password" class="validate">
-							          	<label for="password">Password</label>
-							        </div>
-							      </div>
-							    </form>
-							</div>
-						    <div class="modal-footer">
-						      <a href="#!" class=" modal-action modal-close waves-effect waves-light light-blue-text text-lighten-2 btn-flat">Connect</a>
-						    </div>
-				  </div>
 
 			   <div id="index-banner" class="parallax-container align-wrapper">
 			    <div class="section no-pad">
-			      <div class="container" id="banner">
+			      <div class="container" id="banner1">
 			        <h1 class="header center light-blue-text text-lighten-2">Mind School</h1>
 			        <div class="row center">
-			          <h5 class="header col s12 light white-text">A modern website to change the way of education in school</h5>
+			          <h5 class="header col s12 black-text ">A modern website to change the way of education in school</h5>
 			        </div>
 			        <div class="row center">
-			          <a href="signup.html" id="download-button" class="btn-large waves-effect waves-light light-blue lighten-2">Get Started</a>
+			          <a href="/signup" id="download-button" class="btn-large waves-effect waves-light light-blue lighten-2">Get Started</a>
 			        </div>
 
 			      </div>
 			    </div>
 			    <div class="parallax">
-			    	<img src="images/background1.jpg" alt="Unsplashed background img 1">
+			    	<img src="contents/images/background4.jpg" alt="Unsplashed background img 1">
 			    </div>
 			  </div>
-
-
-
-
 			  <div class="container">
 				    <div class="section">
 
@@ -94,7 +38,7 @@
 
 				            <p class="light">We did most of the heavy lifting for you to provide a new kind of education and share it. Additionally, we refined activities and dashboard to provide a smoother experience for our teachers.</p>
 				            <div class="row center">
-				            <a  href="presentation.html" class="waves-effect waves-light btn light-blue lighten-2">button</a>
+				            <a  href="/presentation" class="waves-effect waves-light btn light-blue lighten-2">button</a>
 				        	</div>
 				          </div>
 				        </div>
@@ -106,7 +50,7 @@
 
 				            <p class="light">We have provided detailed tools as well as specific activities to help teachers to improve theirs abilities to propose exercice which matched with the differents intelligneces of theirs students . We are also always open to feedback and can answer any questions a teacher may have about Mind school.</p>
 				            <div class="row center">
-				            <a href="presentation.html" class="waves-effect waves-light btn light-blue lighten-2">button</a>
+				            <a href="/teacherPresentation" class="waves-effect waves-light btn light-blue lighten-2">button</a>
 				        	</div>
 				          </div>
 				        </div>
@@ -118,7 +62,7 @@
 
 				            <p class="light">By utilizing activities and simple games, we were able to create a school where every courses is adapted for every students. Additionally, for parents, a dashboard is available to follow the resulats of theirs children.</p>
 				            <div class="row center">
-				            <a href="presentation.html" class="waves-effect waves-light btn light-blue lighten-2">button</a>
+				            <a href="/studentPresentation" class="waves-effect waves-light btn light-blue lighten-2">button</a>
 				        	</div>
 				          </div>
 				        </div>
@@ -131,7 +75,7 @@
 
 				            <p class="light">We did most of the heavy lifting for you to provide a new kind of education and share it. Additionally, we refined activities and dashboard to provide a smoother experience for our teachers.</p>
 				            <div class="row center">
-				            <a href="presentation.html" class="waves-effect waves-light btn light-blue lighten-2">button</a>
+				            <a  href="/presentation" class="waves-effect waves-light btn light-blue lighten-2">button</a>
 				        	</div>
 				          </div>
 				        </div>
@@ -143,7 +87,7 @@
 
 				            <p class="light">We have provided detailed tools as well as specific activities to help teachers to improve theirs abilities to propose exercice which matched with the differents intelligneces of theirs students . We are also always open to feedback and can answer any questions a teacher may have about Mind school.</p>
 				            <div class="row center">
-				            <a href="presentation.html" class="waves-effect waves-light btn light-blue lighten-2">button</a>
+				            <a href="/teacherPresentation" class="waves-effect waves-light btn light-blue lighten-2">button</a>
 				        	</div>
 				          </div>
 				        </div>
@@ -155,7 +99,7 @@
 
 				            <p class="light">By utilizing activities and simple games, we were able to create a school where every courses is adapted for every students. Additionally, for parents, a dashboard is available to follow the resulats of theirs children.</p>
 				            <div class="row center">
-				            <a href="presentation.html" class="waves-effect waves-light btn light-blue lighten-2">button</a>
+				            <a href="/studentPresentation" class="waves-effect waves-light btn light-blue lighten-2">button</a>
 				        	</div>
 				          </div>
 				        </div>
@@ -173,7 +117,7 @@
 				        </div>
 				      </div>
 				    </div>
-				    <div class="parallax"><img src="images/background2.jpg" alt="Unsplashed background img 2"></div>
+				    <div class="parallax"><img src="/contents/images/background2.jpg" alt="Unsplashed background img 2"></div>
 				  </div>
 
 
@@ -186,7 +130,7 @@
 				          <h4>Contact Us</h4>
 				          <p class="center-align light">You want to know more or participe to improve this plateforms contact us.
 				          </p>
-				          <p><a href="mailto: david.ringayen@gmail.com"><i class="small material-icons">mail</i></a></p>							
+				          <p><a href="mailto:david.ringayen@icloud.com"><i class="small material-icons">mail</i></a></p>							
 				        </div>
 				      </div>
 				    </div>
@@ -194,33 +138,13 @@
 				  
 				  <div class="parallax-container">
 				  	<div class="parallax">
-				  		<img src="images/background3.jpg" alt="Unsplashed background img 2">
+				  		<img src="/contents/images/background3.jpg" alt="Unsplashed background img 2">
 				  	</div>
 				  </div>
 
+	<?php require 'footer.php'; ?>
 
-	      <footer class="page-footer light-blue lighten-2">
-	          <div class="container">
-	            <div class="row">
-	              <div class="col s12">
-	                <h5 class=" center-align grey-text text-lighten-4">Mind School</h5>
-	                <p class=" center-align grey-text text-lighten-4">A modern website to change the way of education.</p>
-	              </div>
-	              </div>
-	            </div>
-	          <div class="footer-copyright">
-	            <div class="container">
-	            © 2016 Copyright Text
-	            <a class="grey-text text-lighten-4 right" href="#!">More informations</a>
-	            </div>
-	          </div>
-        </footer>
-
-        <!--Import jQuery before materialize.js-->
-	      <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-	      <script type="text/javascript" src="js/materialize.min.js"></script>
-	      <script src="js/init.js"></script>
-
+ <?php require_once('contents/script.php'); ?>
 				
 	</body>
 
