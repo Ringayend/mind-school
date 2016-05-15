@@ -1,0 +1,3 @@
+# mind-school
+This versions is a big update of the last one with links redirection, new interfaces, using cookies...
+For safety, the file to connect with the Data base wasn't  pushed.
