@@ -8,9 +8,9 @@
 
     public static function getInstance() {
       if (!isset(self::$instance)) {
-        $user = 'zibbwcylqtdurb';
-        $password = 'qV94Q6nb0wfXfnd3xA3tdjp709';
-        $dbname = 'd17t7qeh3nuo6q';
+        $user = 'ebtzzvspoiqgva';
+        $password = 'Psq42QkH8pKn1lra4__5pc1sWE';
+        $dbname = 'dbqmajil9iavg0';
         $host = 'ec2-54-228-219-2.eu-west-1.compute.amazonaws.com';
         $port = 5432;
 

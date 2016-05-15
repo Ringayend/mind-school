@@ -7,4 +7,4 @@ RewriteCond %{SCRIPT_FILENAME} !-f
 
 
  
-RewriteRule ^.*$ ./index.php
+RewriteRule ^.*$ https://mind-school.herokuapp.com/index.php
